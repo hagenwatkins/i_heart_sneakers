@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>I heart Sneakers</title>
+
+  </head>
+  <body>
+    <h1>Sneakers</h1>
+
+
+    <form action="/sneakers" method="post">
+      <input type="text" name="sneakers" placeholder="sneakers"/>
+      <input type="number" name="size"placeholder="size"  />
+      <input type="text" name="model" placeholder="model"/>
+      <input type="checkbox" name="deadstock"/>deadstock
+      <button type="sumbit">Add</button>
+    </form>
+
+
+
+
+
+
+    {{#sneakers}}
+    <div>
+    <form action="/sneakers/delete/{{_id}}" method="post">
+
+      <button type="submit">Delete</button>
+
+    </form>
+    {{sneakers}}  {{size}}  {{model}} {{deadstock}}
+  </div>
+    {{/sneakers}}
+
+
+
+  </body>
+</html>
